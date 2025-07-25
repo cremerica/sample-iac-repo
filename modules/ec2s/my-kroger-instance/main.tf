@@ -23,7 +23,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t5.micro"
+  instance_type = "t2.micro"
 
   tags = {
     Name = "my-kroger-instance"
