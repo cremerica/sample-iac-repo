@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-2"
 }
 
 data "aws_ami" "ubuntu" {
@@ -23,7 +23,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+  instance_type = "t2.large"
 
   tags = {
     Name = "my-kroger-instance"
